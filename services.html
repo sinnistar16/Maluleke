@@ -343,6 +343,46 @@
             .navbar-toggler {
                 margin-left: auto;
             }
+
+            .services-container {
+                padding: 1rem;
+            }
+
+            .service-card {
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+
+            .package-item {
+                padding: 1rem;
+            }
+
+            .package-header {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .package-price,
+            .package-name {
+                font-size: 1rem;
+            }
+
+            .details-toggle {
+                margin-top: 0.75rem;
+                display: inline-block;
+            }
+
+            .package-details {
+                font-size: 0.95rem;
+            }
+
+            .btn-service-book {
+                width: 100%;
+            }
+
+            .contact-modal-content {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -715,11 +755,19 @@
             if (!details) return;
             const isVisible = details.style.display === 'block';
             details.style.display = isVisible ? 'none' : 'block';
-            trigger.textContent = isVisible ? 'Details ▼' : 'Hide details ▲';
+            trigger.textContent = isVisible ? 'Details' : 'Hide details';
             if (!isVisible) {
                 details.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.details-toggle').forEach(function(toggle) {
+                if (toggle.textContent.trim().startsWith('Details')) {
+                    toggle.textContent = 'Details';
+                }
+            });
+        });
 
         function bookService(serviceName, packageName) {
             // Update iframe src with service and package parameters

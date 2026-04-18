@@ -201,9 +201,32 @@
             margin-bottom: 0.3rem;
         }
 
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .details-toggle {
+            color: #ffffff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .details-toggle:hover {
+            color: #cccccc;
+        }
+
         .package-details {
-            font-size: 0.85rem;
-            color: #888888;
+            display: none;
+            margin-top: 1rem;
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .package-price {
@@ -761,6 +784,18 @@
             updateCart();
         }
 
+        function togglePackageDetails(event, trigger) {
+            event.stopPropagation();
+            const details = trigger.closest('.package-item').querySelector('.package-details');
+            if (!details) return;
+            const isVisible = details.style.display === 'block';
+            details.style.display = isVisible ? 'none' : 'block';
+            trigger.textContent = isVisible ? 'Details ▼' : 'Hide details';
+            if (!isVisible) {
+                details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         function updatePackages() {
             const packageSection = document.getElementById('packageSection');
             const packageList = document.getElementById('packageList');
@@ -781,7 +816,10 @@
                 const item = document.createElement('div');
                 item.className = 'package-item';
                 item.innerHTML = `
-                    <div class="package-name">${pkg.name}</div>
+                    <div class="package-header">
+                        <div class="package-name">${pkg.name}</div>
+                        <div class="details-toggle" onclick="togglePackageDetails(event, this)">Details ▼</div>
+                    </div>
                     <div class="package-details">${pkg.duration} • ${pkg.description}</div>
                     <div class="package-price">R${pkg.price}</div>
                 `;

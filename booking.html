@@ -672,29 +672,188 @@
         // Updated packages based on new pricing
         const packages = {
             "Portrait Photography": [
-                { name: "15 images | All retouched | 1–2 outfits | 2 people maximum | 1 hour session", price: 2000, duration: "1 hour", description: "Basic portrait session" },
-                { name: "20 images | All retouched | 1–3 outfits | 3 people maximum | 1 hour 30 minute session", price: 2680, duration: "1.5 hours", description: "Extended portrait session" }
+                {
+                    name: "Basic portrait session",
+                    price: 2000,
+                    details: [
+                        "15 images",
+                        "All retouched",
+                        "1–2 outfits",
+                        "2 people maximum",
+                        "1 hour session",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "On location shoots available (transport fee applies)",
+                        "Standard delivery: 5 days",
+                        "Express delivery (48 hr): + R 500"
+                    ]
+                },
+                {
+                    name: "Extended portrait session",
+                    price: 2680,
+                    details: [
+                        "20 images",
+                        "All retouched",
+                        "1–3 outfits",
+                        "3 people maximum",
+                        "1 hour 30 minute session",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "On location shoots available (transport fee applies)",
+                        "Standard delivery: 5 days",
+                        "Express delivery (48 hr): + R 500"
+                    ]
+                }
             ],
             "Graduation Photography": [
-                { name: "15 images total | 10 retouched images | 5 normal edited images | 20–25 minute session", price: 1500, duration: "20-25 mins", description: "Individual graduation session" },
-                { name: "30 images total | 20 retouched images | 10 normal edited images | 45–50 minute session", price: 2800, duration: "45-50 mins", description: "Couple graduation session" }
+                {
+                    name: "Single booking",
+                    price: 1500,
+                    details: [
+                        "15 images total",
+                        "10 retouched images",
+                        "5 normal edited images",
+                        "20–25 minute session",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "On location shoots available (transport fee applies)",
+                        "Standard delivery: 5 days",
+                        "Express delivery (48 hr): + R 500"
+                    ]
+                },
+                {
+                    name: "Double booking",
+                    price: 2800,
+                    details: [
+                        "30 images total",
+                        "20 retouched images",
+                        "10 normal edited images",
+                        "45–50 minute session",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "On location shoots available (transport fee applies)",
+                        "Standard delivery: 5 days",
+                        "Express delivery (48 hr): + R 500"
+                    ]
+                }
             ],
             "Matric Dance": [
-                { name: "30 pictures | 5 retouched images | Normal edit on remaining images", price: 1500, duration: "Event duration", description: "Individual matric dance coverage" },
-                { name: "30 pictures | 5 retouched images | Normal edit on remaining images | 2 people", price: 1800, duration: "Event duration", description: "Couple matric dance coverage" }
+                {
+                    name: "Solo",
+                    price: 1500,
+                    details: [
+                        "30 pictures",
+                        "5 retouched images",
+                        "Normal edit on remaining images",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Standard delivery: 7 working days",
+                        "Express delivery (48 hr): + R 700"
+                    ]
+                },
+                {
+                    name: "With partner",
+                    price: 1800,
+                    details: [
+                        "30 pictures",
+                        "5 retouched images",
+                        "Normal edit on remaining images",
+                        "2 people",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Standard delivery: 7 working days",
+                        "Express delivery (48 hr): + R 700"
+                    ]
+                }
             ],
             "Events Photography": [
-                { name: "20 professional pictures", price: 2000, duration: "1 hour", description: "1 hour event coverage" },
-                { name: "40 professional pictures", price: 4000, duration: "2 hours", description: "2 hour event coverage" },
-                { name: "60 professional pictures", price: 5000, duration: "Half day", description: "Half day event coverage" },
-                { name: "120 professional pictures", price: 10000, duration: "Full day", description: "Full day event coverage" }
+                {
+                    name: "1 hour",
+                    price: 2000,
+                    details: [
+                        "20 professional pictures",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Transport fee applies for on-location events"
+                    ]
+                },
+                {
+                    name: "2 hours",
+                    price: 4000,
+                    details: [
+                        "40 professional pictures",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Transport fee applies for on-location events"
+                    ]
+                },
+                {
+                    name: "Half day",
+                    price: 5000,
+                    details: [
+                        "60 professional pictures",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Transport fee applies for on-location events"
+                    ]
+                },
+                {
+                    name: "Full day",
+                    price: 10000,
+                    details: [
+                        "120 professional pictures",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot",
+                        "Transport fee applies for on-location events"
+                    ]
+                }
             ],
             "Videography": [
-                { name: "30-second professionally edited highlight video", price: 1800, duration: "Post-production", description: "Short highlight video" },
-                { name: "1-minute professionally edited highlight video", price: 3600, duration: "Post-production", description: "1-minute highlight video" },
-                { name: "1 minute 30 second professionally edited highlight video", price: 5400, duration: "Post-production", description: "1.5-minute highlight video" },
-                { name: "2-minute professionally edited highlight video", price: 7200, duration: "Post-production", description: "2-minute highlight video" },
-                { name: "3-minute professionally edited highlight video", price: 9500, duration: "Post-production", description: "3-minute highlight video" }
+                {
+                    name: "30-second highlight video",
+                    price: 1800,
+                    details: [
+                        "30-second professionally edited highlight video",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot"
+                    ]
+                },
+                {
+                    name: "1-minute highlight video",
+                    price: 3600,
+                    details: [
+                        "1-minute professionally edited highlight video",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot"
+                    ]
+                },
+                {
+                    name: "1 min 30 sec highlight video",
+                    price: 5400,
+                    details: [
+                        "1 minute 30 second professionally edited highlight video",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot"
+                    ]
+                },
+                {
+                    name: "2-minute highlight video",
+                    price: 7200,
+                    details: [
+                        "2-minute professionally edited highlight video",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot"
+                    ]
+                },
+                {
+                    name: "3-minute highlight video",
+                    price: 9500,
+                    details: [
+                        "3-minute professionally edited highlight video",
+                        "50% non-refundable deposit required to book",
+                        "Remaining balance due on the day of the shoot"
+                    ]
+                }
             ]
         };
 
@@ -725,22 +884,22 @@
                     // Map simple package names to full package names
                     const packageMapping = {
                         "Portrait Photography": {
-                            "Package 1": "15 images (all retouched) | 1–2 outfits | 2 people max | 1 hr",
-                            "Package 2": "20 images (all retouched) | 1–3 outfits | 3 people max | 1 hr 30 min"
+                            "Package 1": "Basic portrait session",
+                            "Package 2": "Extended portrait session"
                         },
                         "Graduation Photography": {
-                            "Single booking": "Single booking: 15 images | 10 retouched + 5 normal edited | 20–25 mins",
-                            "Double booking": "Double booking: 30 images | 20 retouched + 10 normal edited | 45–50 mins"
+                            "Single booking": "Single booking",
+                            "Double booking": "Double booking"
                         },
                         "Matric Dance": {
-                            "Solo": "Solo: 30 pictures | 5 retouched, normal edit",
-                            "With partner": "With partner: 30 pictures | 5 retouched, normal edit"
+                            "Solo": "Solo",
+                            "With partner": "With partner"
                         },
                         "Events Photography": {
-                            "1 hour": "1 hour: 20 professional pictures",
-                            "2 hours": "2 hours: 40 professional pictures",
-                            "Half day": "Half day: 60 professional pictures",
-                            "Full day": "Full day: 120 professional pictures"
+                            "1 hour": "1 hour",
+                            "2 hours": "2 hours",
+                            "Half day": "Half day",
+                            "Full day": "Full day"
                         },
                         "Videography": {
                             "30-second highlight": "30-second highlight video",
@@ -794,6 +953,10 @@
             }
         }
 
+        function formatPrice(price) {
+            return 'R ' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
         function updatePackages() {
             const packageSection = document.getElementById('packageSection');
             const packageList = document.getElementById('packageList');
@@ -813,13 +976,14 @@
             packages[bookingState.service].forEach(pkg => {
                 const item = document.createElement('div');
                 item.className = 'package-item';
+                const detailsList = pkg.details.map(detail => `<li>${detail}</li>`).join('');
                 item.innerHTML = `
                     <div class="package-header">
                         <div class="package-name">${pkg.name}</div>
-                        <div class="details-toggle" onclick="togglePackageDetails(event, this)">Details ▼</div>
+                        <span class="package-price">${formatPrice(pkg.price)}</span>
                     </div>
-                    <div class="package-details">${pkg.duration} • ${pkg.description}</div>
-                    <div class="package-price">R${pkg.price}</div>
+                    <div class="details-toggle" onclick="togglePackageDetails(event, this)">Details ▼</div>
+                    <div class="package-details"><ul>${detailsList}</ul></div>
                 `;
                 item.onclick = () => selectPackage(pkg.name, pkg.price, item);
                 packageList.appendChild(item);

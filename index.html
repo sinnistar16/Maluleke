@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mfana Ka Maluleke Photography & Cinematography - Pretoria</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* DARK MINIMAL THEME - SETMORE STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #000000;
+            border-bottom: 1px solid #222222;
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #444444 !important;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: #999999 !important;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        .btn-book-nav {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.55rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            margin-left: 1.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-book-nav:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1552804013-cd4628902d4a?w=1600&h=900&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-bottom: 1px solid #222222;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #888888;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0px;
+            font-weight: 400;
+        }
+
+        .btn-cta {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* CONTACT INFO */
+        .contact-info-bar {
+            background-color: #0a0a0a;
+            padding: 2rem;
+            border-bottom: 1px solid #222222;
+            text-align: center;
+        }
+
+        .contact-info-bar p {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-info-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-info-bar a:hover {
+            color: #888888;
+        }
+
+        .contact-icon {
+            margin-right: 0.5rem;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 4rem 2rem;
+            background-color: #000000;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            letter-spacing: 0px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .service-card {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            background-color: #111111;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .service-card p {
+            color: #666666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+
+        .btn-service {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.6rem 1.3rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-service:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            border-top: 1px solid #222222;
+            padding: 2rem;
+            text-align: center;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #888888;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        /* CONTACT MODAL */
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-modal.active {
+            display: flex;
+        }
+
+        .contact-modal-content {
+            background-color: #111111;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-modal-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            color: #ffffff;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-item a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-modal-close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888888;
+            transition: color 0.3s;
+        }
+
+        .contact-modal-close:hover {
+            color: #ffffff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .nav-link, .btn-book-nav {
+                margin-left: 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .contact-info-bar {
+                padding: 1.5rem;
+            }
+
+            .contact-info-bar a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#home">MFANA KA MALULEKE</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="policy.html">Policy & FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="openContactModal(event)">Contact Us</a></li>
+                    <li class="nav-item">
+                        <button onclick="openBooking()" class="btn btn-book-nav">Book Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Professional Photography & Cinematography</h1>
+            <p>Pretoria Central</p>
+            <button onclick="openBooking()" class="btn-cta">Book a Session</button>
+        </div>
+    </section>
+
+
+    <!-- SERVICES MOVED TO SEPARATE PAGE -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Mfana Ka Maluleke Photography & Cinematography. All rights reserved.</p>
+    </footer>
+
+    <!-- CONTACT US MODAL -->
+    <div id="contactModal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="contact-modal-close" onclick="closeContactModal()">✕</span>
+            <h2>Contact Us</h2>
+            <div class="contact-item">
+                <a href="tel:+27762942783">+27 76 294 2783</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:mkmaluleke.bookings@gmail.com">mkmaluleke.bookings@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://wa.me/27762942783" target="_blank">WhatsApp</a>
+            </div>
+            <p style="color: #666666; margin-top: 2rem; font-size: 0.9rem;">329 Park St, Arcadia, Pretoria</p>
+        </div>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; overflow-y: auto;">
+        <div style="position: relative; width: 100%; min-height: 100vh;">
+            <button onclick="closeBooking()" style="position: fixed; top: 20px; right: 20px; background: #ffffff; color: #000000; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: 600; z-index: 1001;">✕ Close</button>
+            <iframe id="bookingFrame" src="booking.html" style="width: 100%; height: 100vh; border: none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openBooking() {
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openContactModal(e) {
+            if (e) e.preventDefault();
+            document.getElementById('contactModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals when pressing Escape or clicking outside
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBooking();
+                closeContactModal();
+            }
+        });
+
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

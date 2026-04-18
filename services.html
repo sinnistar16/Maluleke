@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Mfana Ka Maluleke Photography & Cinematography</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #000000;
+            border-bottom: 1px solid #222222;
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #444444 !important;
+        }
+
+        .nav-link {
+            color: #999999 !important;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        .btn-book-nav {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.55rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            margin-left: 1.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-book-nav:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1552804013-cd4628902d4a?w=1600&h=600&fit=crop') center/cover no-repeat;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #222222;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            color: #888888;
+            font-size: 1.1rem;
+        }
+
+        /* SERVICES SECTION */
+        .services-container {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #111111;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #444444;
+            background-color: #1a1a1a;
+        }
+
+        .service-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.25rem;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #999999;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-item {
+            background-color: #0a0a0a;
+            padding: 1.25rem;
+            border-radius: 4px;
+            border-left: 3px solid #444444;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #666666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .btn-service-book {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-service-book:hover {
+            background-color: #f0f0f0;
+        }
+
+        .package-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #0a0a0a;
+            border-radius: 6px;
+            border: 1px solid #333333;
+        }
+
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-name {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .package-price {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .details-toggle {
+            color: #ffffff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .details-toggle:hover {
+            color: #cccccc;
+        }
+
+        .package-details {
+            display: none;
+            margin-top: 1rem;
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .package-details ul {
+            margin: 0.75rem 0 1rem 1.25rem;
+        }
+
+        .package-details li {
+            margin-bottom: 0.5rem;
+        }
+
+        .package-details .btn-service-book {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            border-top: 1px solid #222222;
+            padding: 2rem;
+            text-align: center;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #888888;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        /* CONTACT MODAL */
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-modal.active {
+            display: flex;
+        }
+
+        .contact-modal-content {
+            background-color: #111111;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-modal-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            color: #ffffff;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-item a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-modal-close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888888;
+            transition: color 0.3s;
+        }
+
+        .contact-modal-close:hover {
+            color: #ffffff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .service-details {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .navbar-toggler {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">MFANA KA MALULEKE</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="policy.html">Policy & FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="openContactModal(event)">Contact Us</a></li>
+                    <li class="nav-item">
+                        <button onclick="openBooking()" class="btn btn-book-nav">Book Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Professional photography & videography tailored to your needs</p>
+    </section>
+
+    <!-- SERVICES -->
+    <div class="services-container">
+        <div class="service-card">
+            <h2>Portrait Photography</h2>
+            <p>Professional portrait photography with premium lighting, backdrops, and retouching for a polished final gallery.</p>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Package 1</span>
+                    <span class="package-price">R 2 000</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>15 images, all retouched</li>
+                        <li>1–2 outfits, 2 people maximum</li>
+                        <li>1 hour session</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>On location shoots available (transport fee applies)</li>
+                        <li>Standard delivery: 5 days</li>
+                        <li>Express delivery (48 hr): + R 500</li>
+                    </ul>
+                    <button onclick="bookService('Portrait Photography', 'Package 1')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Package 2</span>
+                    <span class="package-price">R 2 680</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>20 images, all retouched</li>
+                        <li>1–3 outfits, 3 people maximum</li>
+                        <li>1 hour 30 minute session</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>On location shoots available (transport fee applies)</li>
+                        <li>Standard delivery: 5 days</li>
+                        <li>Express delivery (48 hr): + R 500</li>
+                    </ul>
+                    <button onclick="bookService('Portrait Photography', 'Package 2')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Graduation Photography</h2>
+            <p>Celebrate your achievement with professional graduation photography and polished, share-ready images.</p>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Single booking</span>
+                    <span class="package-price">R 1 500</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>15 images total</li>
+                        <li>10 retouched images, 5 normal edited images</li>
+                        <li>20–25 minute session</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>On location shoots available (transport fee applies)</li>
+                        <li>Standard delivery: 5 days</li>
+                        <li>Express delivery (48 hr): + R 500</li>
+                    </ul>
+                    <button onclick="bookService('Graduation Photography', 'Single booking')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Double booking</span>
+                    <span class="package-price">R 2 800</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>30 images total</li>
+                        <li>20 retouched images, 10 normal edited images</li>
+                        <li>45–50 minute session</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>On location shoots available (transport fee applies)</li>
+                        <li>Standard delivery: 5 days</li>
+                        <li>Express delivery (48 hr): + R 500</li>
+                    </ul>
+                    <button onclick="bookService('Graduation Photography', 'Double booking')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Matric Dance</h2>
+            <p>Capture your matric dance with stunning portraits and candid highlights for a memorable keepsake.</p>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Solo</span>
+                    <span class="package-price">R 1 500</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>30 pictures</li>
+                        <li>5 retouched images, normal edit on remaining images</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Standard delivery: 7 working days</li>
+                        <li>Express delivery (48 hr): + R 700</li>
+                    </ul>
+                    <button onclick="bookService('Matric Dance', 'Solo')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">With partner</span>
+                    <span class="package-price">R 1 800</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>30 pictures</li>
+                        <li>5 retouched images, normal edit on remaining images</li>
+                        <li>2 people</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Standard delivery: 7 working days</li>
+                        <li>Express delivery (48 hr): + R 700</li>
+                    </ul>
+                    <button onclick="bookService('Matric Dance', 'With partner')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Events Photography</h2>
+            <p>Professional coverage for events with fast turnaround and sharp, polished images.</p>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">1 hour</span>
+                    <span class="package-price">R 2 000</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>20 professional pictures</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Transport fee applies for on-location events</li>
+                    </ul>
+                    <button onclick="bookService('Events Photography', '1 hour')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">2 hours</span>
+                    <span class="package-price">R 4 000</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>40 professional pictures</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Transport fee applies for on-location events</li>
+                    </ul>
+                    <button onclick="bookService('Events Photography', '2 hours')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Half day</span>
+                    <span class="package-price">R 5 000</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>60 professional pictures</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Transport fee applies for on-location events</li>
+                    </ul>
+                    <button onclick="bookService('Events Photography', 'Half day')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">Full day</span>
+                    <span class="package-price">R 10 000</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>120 professional pictures</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                        <li>Transport fee applies for on-location events</li>
+                    </ul>
+                    <button onclick="bookService('Events Photography', 'Full day')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Videography</h2>
+            <p>Cinematic highlight videos produced with professional editing and polished storytelling.</p>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">30-second highlight</span>
+                    <span class="package-price">R 1 800</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>30-second professionally edited highlight video</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                    </ul>
+                    <button onclick="bookService('Videography', '30-second highlight')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">1-minute highlight</span>
+                    <span class="package-price">R 3 600</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>1-minute professionally edited highlight video</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                    </ul>
+                    <button onclick="bookService('Videography', '1-minute highlight')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">1 min 30 sec highlight</span>
+                    <span class="package-price">R 5 400</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>1 minute 30 second professionally edited highlight video</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                    </ul>
+                    <button onclick="bookService('Videography', '1 min 30 sec highlight')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">2-minute highlight</span>
+                    <span class="package-price">R 7 200</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>2-minute professionally edited highlight video</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                    </ul>
+                    <button onclick="bookService('Videography', '2-minute highlight')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-item">
+                <div class="package-header">
+                    <span class="package-name">3-minute highlight</span>
+                    <span class="package-price">R 9 500</span>
+                </div>
+                <div class="details-toggle" onclick="togglePackageDetails(this)">Details ▼</div>
+                <div class="package-details">
+                    <ul>
+                        <li>3-minute professionally edited highlight video</li>
+                        <li>50% non-refundable deposit required to book</li>
+                        <li>Remaining balance due on the day of the shoot</li>
+                    </ul>
+                    <button onclick="bookService('Videography', '3-minute highlight')" class="btn-service-book">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Mfana Ka Maluleke Photography & Cinematography. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa.me/27762942783"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </footer>
+
+    <!-- CONTACT US MODAL -->
+    <div id="contactModal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="contact-modal-close" onclick="closeContactModal()">✕</span>
+            <h2>Contact Us</h2>
+            <div class="contact-item">
+                <a href="tel:+27762942783">+27 76 294 2783</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:mkmaluleke.bookings@gmail.com">mkmaluleke.bookings@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://wa.me/27762942783" target="_blank">WhatsApp</a>
+            </div>
+            <p style="color: #666666; margin-top: 2rem; font-size: 0.9rem;">329 Park St, Arcadia, Pretoria</p>
+        </div>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; overflow-y: auto;">
+        <div style="position: relative; width: 100%; min-height: 100vh;">
+            <button onclick="closeBooking()" style="position: fixed; top: 20px; right: 20px; background: #ffffff; color: #000000; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: 600; z-index: 1001;">✕ Close</button>
+            <iframe id="bookingFrame" src="booking.html" style="width: 100%; height: 100vh; border: none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function togglePackageDetails(trigger) {
+            const details = trigger.nextElementSibling;
+            if (!details) return;
+            const isVisible = details.style.display === 'block';
+            details.style.display = isVisible ? 'none' : 'block';
+            trigger.textContent = isVisible ? 'Details ▼' : 'Hide details ▲';
+            if (!isVisible) {
+                details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function bookService(serviceName, packageName) {
+            // Update iframe src with service and package parameters
+            const bookingFrame = document.getElementById('bookingFrame');
+            let url = 'booking.html?service=' + encodeURIComponent(serviceName);
+            if (packageName) {
+                url += '&package=' + encodeURIComponent(packageName);
+            }
+            bookingFrame.src = url;
+            openBooking();
+        }
+
+        function openBooking() {
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openContactModal(e) {
+            if (e) e.preventDefault();
+            document.getElementById('contactModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when pressing Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBooking();
+                closeContactModal();
+            }
+        });
+
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
